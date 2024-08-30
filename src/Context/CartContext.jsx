@@ -119,7 +119,7 @@ export default function CartContextProvider({ children }) {
     }
     try {
       let { data } = await axios.post(
-        `${baseUrl}/api/v1/orders/checkout-session/${Cart.data._id}?url=http://localhost:5173`,
+        `${baseUrl}/api/v1/orders/checkout-session/${Cart.data._id}?url=https://fresh-cart-lovat-omega.vercel.app/`,
         { shippingAddress },
         { headers: { token } }
       );
