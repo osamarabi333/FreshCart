@@ -109,7 +109,9 @@ export default function RecentProducts() {
             >
               <div className="product">
                 {/* Link to product details page */}
-                <Link to={`/productDetails/${product.id}/${product.category.name}`}>
+                <Link
+                  to={`/productDetails/${product.id}/${product.category.name}`}
+                >
                   <img
                     src={product.imageCover}
                     className="w-full h-5/6 pb-2"
@@ -125,7 +127,9 @@ export default function RecentProducts() {
                     <p className="dark:text-white">{product.price} EGP</p>
                     <div className="flex items-center gap-1">
                       <i className="fa-solid fa-star text-[#FFD43B]"></i>
-                      <p className="dark:text-white">{product.ratingsAverage}</p>
+                      <p className="dark:text-white">
+                        {product.ratingsAverage}
+                      </p>
                     </div>
                   </div>
                 </Link>
@@ -181,7 +185,7 @@ export default function RecentProducts() {
             </div>
           ))
         ) : (
-          <p>No products available</p>
+          <LoadingSpinner />
         )}
       </div>
     </div>
